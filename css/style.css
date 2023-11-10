@@ -192,7 +192,7 @@ header.navbar{
     width: 20px; 
     height: 15px;
     display: inline-block;
-    background-image: url("assets/img/pick.svg"); 
+    background-image: url("../assets/img/pick.svg"); 
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 0px; 
@@ -489,7 +489,7 @@ iframe {
 
 
 .tour-background {
-    background-image: url("assets/img/f2.jpg");
+    background-image: url("../assets/img/f2.jpg");
     background-size: cover;
     background-position: center;
     height: 150vh;
@@ -566,7 +566,7 @@ h2 {
 
     .tour-background{
         height: 220vh;
-        background-image: url("assets/img/f1.jpg");
+        background-image: url("../assets/img/f1.jpg");
     }
 }
 
