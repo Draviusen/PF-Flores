@@ -7,7 +7,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(50, 131, 236);
+  color: #0074d9;
   font-family: Helvetica;
   font-weight: 800;
   font-size: xx-large;
@@ -19,7 +19,7 @@ h2 {
   }
 }
 h3, h4 {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 p {
@@ -116,8 +116,8 @@ p {
 }
 
 button.navbar-toggler {
-  color: #fff;
-  border-color: #fff;
+  color: #0074d9;
+  border-color: #0074d9;
 }
 
 header.navbar {
@@ -125,7 +125,7 @@ header.navbar {
   z-index: 2;
 }
 header.navbar .navbar-nav .nav-link {
-  color: white !important;
+  color: #fff !important;
 }
 header.navbar .navbar-nav {
   z-index: 2;
@@ -149,7 +149,7 @@ header.navbar .red-social {
 }
 header.navbar .red-social:hover {
   transform: translateY(-5px);
-  color: #0074d9;
+  color: #fff;
 }
 @media (max-width: 992px) {
   header.navbar .red-social {
@@ -185,7 +185,8 @@ header.navbar .pick-icon {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 .banner_main .overlay {
@@ -248,8 +249,7 @@ header.navbar .pick-icon {
   padding-top: 60px;
   margin: 0 auto;
 }
-
-.boton {
+.seccion .boton {
   display: inline-block;
   padding: 10px 20px;
   background-color: #0074d9;
@@ -261,19 +261,17 @@ header.navbar .pick-icon {
   margin: 0 10px;
   font-family: Helvetica;
 }
-
-.boton:hover {
+.seccion .boton:hover {
   background-color: #0056b3;
 }
-
-
 .seccion .imagen {
   max-width: 100%;
   margin-right: 20px;
   transition: transform 0.3s;
   width: 35%;
   max-height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s;
   padding-right: 40px;
 }
@@ -386,7 +384,6 @@ iframe {
   text-align: center;
   transition: transform 0.3s;
   position: relative;
-  /*                                        tour                                            */
 }
 .product-card:hover {
   transform: scale(1.01);
@@ -410,7 +407,9 @@ iframe {
 .product-card .merch-container .merch-title {
   font-size: 2em;
 }
-.product-card .tour-background {
+
+/*                                        tour                                            */
+.tour-background {
   background-image: url("../assets/img/f2.jpg");
   background-size: cover;
   background-position: center;
@@ -420,7 +419,7 @@ iframe {
   justify-content: center;
   margin-bottom: -60px;
 }
-.product-card .tour-background .overlay-tour {
+.tour-background .overlay-tour {
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
@@ -429,14 +428,14 @@ iframe {
   align-items: center;
   justify-content: center;
 }
-.product-card .tour-background .overlay-tour .tour-container {
+.tour-background .overlay-tour .tour-container {
   text-align: center;
-  color: white;
+  color: #fff;
 }
-.product-card .tour-background .overlay-tour .tour-container h2 {
+.tour-background .overlay-tour .tour-container h2 {
   font-size: 2em;
 }
-.product-card .tour-background .overlay-tour .tour-container .concert-bar {
+.tour-background .overlay-tour .tour-container .concert-bar {
   display: flex;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
@@ -445,39 +444,39 @@ iframe {
   border-radius: 5px;
   width: 100%;
 }
-.product-card .tour-background .overlay-tour .tour-container .concert-bar .left, .product-card .tour-background .overlay-tour .tour-container .concert-bar .center, .product-card .tour-background .overlay-tour .tour-container .concert-bar .right {
+.tour-background .overlay-tour .tour-container .concert-bar .left, .tour-background .overlay-tour .tour-container .concert-bar .center, .tour-background .overlay-tour .tour-container .concert-bar .right {
   flex: 1;
   margin: 0 40px;
 }
-.product-card .tour-background .overlay-tour .tour-container .concert-bar .left .date, .product-card .tour-background .overlay-tour .tour-container .concert-bar .left .venue, .product-card .tour-background .overlay-tour .tour-container .concert-bar .left .city, .product-card .tour-background .overlay-tour .tour-container .concert-bar .left .country, .product-card .tour-background .overlay-tour .tour-container .concert-bar .center .date, .product-card .tour-background .overlay-tour .tour-container .concert-bar .center .venue, .product-card .tour-background .overlay-tour .tour-container .concert-bar .center .city, .product-card .tour-background .overlay-tour .tour-container .concert-bar .center .country, .product-card .tour-background .overlay-tour .tour-container .concert-bar .right .date, .product-card .tour-background .overlay-tour .tour-container .concert-bar .right .venue, .product-card .tour-background .overlay-tour .tour-container .concert-bar .right .city, .product-card .tour-background .overlay-tour .tour-container .concert-bar .right .country {
+.tour-background .overlay-tour .tour-container .concert-bar .left .date, .tour-background .overlay-tour .tour-container .concert-bar .left .venue, .tour-background .overlay-tour .tour-container .concert-bar .left .city, .tour-background .overlay-tour .tour-container .concert-bar .left .country, .tour-background .overlay-tour .tour-container .concert-bar .center .date, .tour-background .overlay-tour .tour-container .concert-bar .center .venue, .tour-background .overlay-tour .tour-container .concert-bar .center .city, .tour-background .overlay-tour .tour-container .concert-bar .center .country, .tour-background .overlay-tour .tour-container .concert-bar .right .date, .tour-background .overlay-tour .tour-container .concert-bar .right .venue, .tour-background .overlay-tour .tour-container .concert-bar .right .city, .tour-background .overlay-tour .tour-container .concert-bar .right .country {
   margin-bottom: 5px;
 }
-.product-card .tour-background .overlay-tour .tour-container .concert-bar .left .buy-tickets, .product-card .tour-background .overlay-tour .tour-container .concert-bar .center .buy-tickets, .product-card .tour-background .overlay-tour .tour-container .concert-bar .right .buy-tickets {
+.tour-background .overlay-tour .tour-container .concert-bar .left .buy-tickets, .tour-background .overlay-tour .tour-container .concert-bar .center .buy-tickets, .tour-background .overlay-tour .tour-container .concert-bar .right .buy-tickets {
   background-color: #0074d9;
-  color: white;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
 }
-.product-card .tour-background .overlay-tour .tour-container .concert-bar .left .buy-tickets:hover, .product-card .tour-background .overlay-tour .tour-container .concert-bar .center .buy-tickets:hover, .product-card .tour-background .overlay-tour .tour-container .concert-bar .right .buy-tickets:hover {
+.tour-background .overlay-tour .tour-container .concert-bar .left .buy-tickets:hover, .tour-background .overlay-tour .tour-container .concert-bar .center .buy-tickets:hover, .tour-background .overlay-tour .tour-container .concert-bar .right .buy-tickets:hover {
   background-color: #0056b3;
 }
 @media (max-width: 768px) {
-  .product-card .tour-background .overlay-tour .tour-container .concert-bar {
+  .tour-background .overlay-tour .tour-container .concert-bar {
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-top: 30px;
   }
-  .product-card .tour-background .overlay-tour .tour-container .left, .product-card .tour-background .overlay-tour .tour-container .center, .product-card .tour-background .overlay-tour .tour-container .right {
+}
+@media (max-width: 768px) {
+  .tour-background .left, .tour-background .center, .tour-background .right {
     margin: 10px 0;
   }
-  .product-card .tour-background .overlay-tour .tour-container .tour-background {
+  .tour-background .tour-background {
     height: 220vh;
     background-image: url("../assets/img/f1.jpg");
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

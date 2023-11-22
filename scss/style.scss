@@ -1,24 +1,17 @@
+@import "./partials/variables";
 /*                                        headliners                                             */
-$h1-color: rgb(0, 0, 0);
-$h1-font-family: Helvetica;
-$h1-font-weight: 800;
 
 h1 {
-    color: $h1-color;
-    font-family: $h1-font-family;
-    font-weight: $h1-font-weight;
+    color: $negro;
+    font-family: $helvatica;
+    font-weight: $grueso;
 }
 
-$h2-color: rgb(50, 131, 236);
-$h2-font-family: Helvetica;
-$h2-font-weight: 800;
-$h2-font-size: xx-large;
-
 h2 {
-    color: $h2-color;
-    font-family: $h2-font-family;
-    font-weight: $h2-font-weight;
-    font-size: $h2-font-size;
+    color: $azul;
+    font-family: $helvatica;
+    font-weight: $grueso;
+    font-size: $xxl;
 }
 
 @media (max-width: 767px) {
@@ -28,23 +21,18 @@ h2 {
 }
 
 h3, h4 {
-    color: black;
+    color: $negro;
 }
 
 p {
-    font-family: Helvetica;
-    color: #1F262D;
+    font-family: $helvatica;
+    color: $plomo;
 }
 
 /*                                                  footer                           */
-$footer-bg-color: #1F262D;
-$footer-padding: 20px;
-$footer-text-color: #fff;
-$footer-icon-color: #fff;
-$footer-icon-hover-color: #0074d9;
 
 .footer {
-    background-color: $footer-bg-color;
+    background-color: $plomo;
     padding: $footer-padding;
     display: flex;
     flex-direction: column;
@@ -60,12 +48,12 @@ $footer-icon-hover-color: #0074d9;
 
         .social-icon {
             font-size: 24px;
-            color: $footer-icon-color;
+            color: $blanco;
             text-decoration: none;
             transition: transform 0.3s ease;
 
             &:hover {
-                color: $footer-icon-hover-color;
+                color: $azul;
                 transform: translateY(-5px);
             }
         }
@@ -86,10 +74,10 @@ $footer-icon-hover-color: #0074d9;
 
             a {
                 text-decoration: none;
-                color: $footer-text-color;
+                color: $blanco;
 
                 &:hover {
-                    color: $footer-icon-hover-color;
+                    color: $azul;
                 }
             }
         }
@@ -148,8 +136,8 @@ $footer-icon-hover-color: #0074d9;
 }
 
 button.navbar-toggler {
-    color: $footer-icon-color;
-    border-color: $footer-icon-color;
+    color: $azul;
+    border-color: $azul;
 }
 
 header.navbar {
@@ -157,7 +145,7 @@ header.navbar {
     z-index: 2;
 
     .navbar-nav .nav-link {
-        color: white !important;
+        color: $blanco !important;
     }
 
     .navbar-nav {
@@ -165,7 +153,7 @@ header.navbar {
         list-style: none;
         font-family: Helvetica;
         font-weight: 600;
-        color: $footer-text-color;
+        color: $blanco;
         padding: 10px;
     }
 
@@ -174,7 +162,7 @@ header.navbar {
         list-style: none;
         font-family: Helvetica;
         font-weight: 600;
-        color: $footer-text-color;
+        color: $blanco;
     }
 
     .red-social {
@@ -184,7 +172,7 @@ header.navbar {
 
         &:hover {
             transform: translateY(-5px);
-            color: $footer-icon-hover-color;
+            color: $blanco;
         }
     }
 
@@ -213,7 +201,7 @@ header.navbar {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: $footer-text-color;
+    color: $blanco;
     text-align: center;
     padding: 20px;
     overflow: hidden;
@@ -238,7 +226,7 @@ header.navbar {
     }
 
     p {
-        color: #fff;
+        color: $blanco;
     }
 
     .content-container {
@@ -252,8 +240,8 @@ header.navbar {
         .boton {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #0074d9;
-            color: #fff;
+            background-color: $azul;
+            color: $blanco;
             text-decoration: none;
             border: none;
             border-radius: 5px;
@@ -261,7 +249,7 @@ header.navbar {
             margin: 0 10px;
             font-family: Helvetica;
             &:hover {
-                background-color: #0056b3;
+                background-color: $hoverazul;
             }
         }
     }
@@ -296,8 +284,8 @@ header.navbar {
     .boton {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #0074d9;
-        color: #fff;
+        background-color: $azul;
+        color: $blanco;
         text-decoration: none;
         border: none;
         border-radius: 5px;
@@ -305,7 +293,7 @@ header.navbar {
         margin: 0 10px;
         font-family: Helvetica;
         &:hover {
-            background-color: #0056b3;
+            background-color: $hoverazul;
         }
     }
 
@@ -470,90 +458,88 @@ iframe {
             font-size: 2em;
         }
     }
+}
 
-    /*                                        tour                                            */
-    $tour-background-url: "../assets/img/f2.jpg";
-    $tour-background-mobile-url: "../assets/img/f1.jpg";
-    $tour-background-height: 150vh;
-    $tour-background-mobile-height: 220vh;
-    .tour-background {
-        background-image: url("#{$tour-background-url}");
-        background-size: cover;
-        background-position: center;
-        height: $tour-background-height;
+
+/*                                        tour                                            */
+
+.tour-background {
+    background-image: url("../assets/img/f2.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -60px;
+
+    .overlay-tour {
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: -60px;
-    
-        .overlay-tour {
-            background-color: rgba(0, 0, 0, 0.7);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-    
-            .tour-container {
-                text-align: center;
-                color: white;
-    
-                h2 {
-                    font-size: 2em;
-                }
-    
-                .concert-bar {
-                    display: flex;
-                    align-items: center;
-                    background-color: rgba(255, 255, 255, 0.1);
-                    padding: 20px;
-                    margin-top: 20px;
-                    border-radius: 5px;
-                    width: 100%;
-    
-                    .left, .center, .right {
-                        flex: 1;
-                        margin: 0 40px;
-    
-                        .date, .venue, .city, .country {
-                            margin-bottom: 5px;
-                        }
-    
-                        .buy-tickets {
-                            background-color: #0074d9;
-                            color: white;
-                            padding: 10px 20px;
-                            border: none;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            font-size: 1em;
-    
-                            &:hover {
-                                background-color: #0056b3;
-                            }
+
+        .tour-container {
+            text-align: center;
+            color: $blanco;
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .concert-bar {
+                display: flex;
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+                margin-top: 20px;
+                border-radius: 5px;
+                width: 100%;
+
+                .left, .center, .right {
+                    flex: 1;
+                    margin: 0 40px;
+
+                    .date, .venue, .city, .country {
+                        margin-bottom: 5px;
+                    }
+
+                    .buy-tickets {
+                        background-color: $azul;
+                        color: $blanco;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 1em;
+
+                        &:hover {
+                            background-color: $hoverazul;
                         }
                     }
                 }
-    
+
                 @media (max-width: 768px) {
-                    .concert-bar {
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-                        margin-top: 30px;
-                    }
-    
-                    .left, .center, .right {
-                        margin: 10px 0;
-                    }
-    
-                    .tour-background {
-                        height: $tour-background-mobile-height;
-                        background-image: url("#{$tour-background-mobile-url}");
-                    }
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 30px;
                 }
             }
         }
-    }        
+    }
+
+    @media (max-width: 768px) {
+        .left, .center, .right {
+            margin: 10px 0;
+        }
+
+        .tour-background {
+            height: 220vh;
+            background-image: url("../assets/img/f1.jpg");
+        }
+    }
 }
