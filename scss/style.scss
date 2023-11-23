@@ -95,10 +95,6 @@ p {
         padding: 0;
     }
 
-    .site-footer {
-        margin: 0;
-    }
-
     @media (max-width: 767px) {
         .social-icons {
             gap: 10px;
@@ -205,6 +201,7 @@ header.navbar {
     text-align: center;
     padding: 20px;
     overflow: hidden;
+
     .video-bg {
         position: absolute;
         top: 0;
@@ -224,53 +221,41 @@ header.navbar {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
-
-    p {
-        color: $blanco;
-    }
-
     .content-container {
         z-index: 2;
-    }
 
-    .boton-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        .boton {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: $azul;
-            color: $blanco;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 10px;
-            font-family: Helvetica;
-            &:hover {
-                background-color: $hoverazul;
+        p {
+        color: $blanco;
+        }
+        .boton-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        
+            .boton {
+                @include estilo-botones;
             }
         }
     }
-
     @media (max-width: 767px) {
         .boton-container {
-            flex-direction: column;
-            margin-top: 10px;
-            .boton {
-                margin: 10px 0;
-            }
+        flex-direction: column;
+        margin-top: 10px;
+
+        .boton {
+            margin: 10px 0;
         }
+    }
 
         .banner_main {
-            align-items: center;
-            padding: 20px;
-            height: auto;
-            background-attachment: scroll;
+        align-items: center;
+        padding: 20px;
+        height: auto;
+        background-attachment: scroll;
         }
     }
 }
+
 
 /*                                        SECCIÓN HOME                                             */
 .seccion {
@@ -281,23 +266,6 @@ header.navbar {
     padding-top: 60px;
     margin: 0 auto;
 
-    .boton {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: $azul;
-        color: $blanco;
-        text-decoration: none;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 0 10px;
-        font-family: Helvetica;
-        &:hover {
-            background-color: $hoverazul;
-        }
-    }
-
-
     .imagen {
         max-width: 100%;
         margin-right: 20px;
@@ -307,6 +275,7 @@ header.navbar {
         object-fit: cover;
         transition: transform 0.3s;
         padding-right: 40px;
+        animation: escalar-continuo 8s ease-in-out infinite;
 
         &:hover {
             transform: scale(1.05);
@@ -316,6 +285,10 @@ header.navbar {
     .contenido {
         max-width: 600px;
         text-align: center;
+
+        .boton {
+            @include estilo-botones;
+        }
     }
 
     @media (max-width: 767px) {
@@ -325,8 +298,8 @@ header.navbar {
 
         .imagen {
             width: 100%;
-            max-height: auto;
             padding-right: 0;
+            margin: 0 0 20px 0;
 
             &:hover {
                 transform: none;
@@ -337,37 +310,60 @@ header.navbar {
             flex-direction: column;
             text-align: center;
         }
+    }
+}
 
-        .imagen {
-            margin: 0 0 20px 0;
-        }
+@keyframes escalar-continuo {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.07);
     }
 }
 
 /*                                        discografía                                             */
-iframe {
-    width: 300px;
-    height: 380px;
-    margin-left: 20px;
-}
 
 .reproductor_discos {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 60%;
+    max-width: 800px;
     margin: auto;
     margin-top: 100px;
 
     .reproductor {
-        width: 300px;
-        margin-right: 80px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        iframe {
+        width: 100%;
+        height: 380px; 
+        }
     }
 
     .informacion {
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+
+    .reproductor {
+        width: 40%;
+        margin-right: 40px;
+        margin-bottom: 0;
+        }
+
+    .informacion {
         flex: 1;
+        text-align: left;
+        }
     }
 }
+
 
 /*                                        contacto                                            */
 .contacto-full {
@@ -409,56 +405,58 @@ iframe {
 }
 
 /*                                        merch                                            */
-.merch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 2%;
-    max-width: 100%;
-}
-
-@media (min-width: 768px) {
-    .merch-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.product-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
+.merch-container {
     text-align: center;
-    transition: transform 0.3s;
-    position: relative;
+    margin-top: 5%;
 
-    &:hover {
-        transform: scale(1.01);
+    .title {
+        font-size: 2em;
     }
 
-    h3 {
-        margin: 3;
-        font-size: 15px;
-    }
+    .merch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 2%;
+        max-width: 100%;
 
-    .product-image {
-        width: 100%;
-        height: auto;
-        transition: transform 0.3s ease;
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+            cursor: pointer;
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.01);
+        }
+
+            h3 {
+                margin: 3;
+                font-size: 15px;
+            }
+
+            .product-image {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+                }
+            }
         }
     }
 
-    .merch-container {
-        text-align: center;
-        margin-top: 5%;
-
-        .merch-title {
-            font-size: 2em;
+    @media (min-width: 768px) {
+        .merch-grid {
+        grid-template-columns: repeat(4, 1fr);
         }
     }
 }
+
 
 
 /*                                        tour                                            */
@@ -508,17 +506,10 @@ iframe {
                     }
 
                     .buy-tickets {
-                        background-color: $azul;
-                        color: $blanco;
-                        padding: 10px 20px;
-                        border: none;
+                        @include estilo-botones;
                         border-radius: 5px;
                         cursor: pointer;
                         font-size: 1em;
-
-                        &:hover {
-                            background-color: $hoverazul;
-                        }
                     }
                 }
 

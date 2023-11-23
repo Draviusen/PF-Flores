@@ -11,3 +11,19 @@ $plomo: #1F262D;
 $footer-padding: 20px;
 
 
+@mixin estilo-botones {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: $azul;
+    color: $blanco;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: Helvetica;
+
+    &:hover {
+        background-color: $hoverazul;
+    }
+}

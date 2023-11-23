@@ -81,9 +81,6 @@ p {
   margin: 0;
   padding: 0;
 }
-.footer .site-footer {
-  margin: 0;
-}
 @media (max-width: 767px) {
   .footer .social-icons {
     gap: 10px;
@@ -198,18 +195,18 @@ header.navbar .pick-icon {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-.banner_main p {
-  color: #fff;
-}
 .banner_main .content-container {
   z-index: 2;
 }
-.banner_main .boton-container {
+.banner_main .content-container p {
+  color: #fff;
+}
+.banner_main .content-container .boton-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-.banner_main .boton-container .boton {
+.banner_main .content-container .boton-container .boton {
   display: inline-block;
   padding: 10px 20px;
   background-color: #0074d9;
@@ -221,7 +218,7 @@ header.navbar .pick-icon {
   margin: 0 10px;
   font-family: Helvetica;
 }
-.banner_main .boton-container .boton:hover {
+.banner_main .content-container .boton-container .boton:hover {
   background-color: #0056b3;
 }
 @media (max-width: 767px) {
@@ -249,7 +246,26 @@ header.navbar .pick-icon {
   padding-top: 60px;
   margin: 0 auto;
 }
-.seccion .boton {
+.seccion .imagen {
+  max-width: 100%;
+  margin-right: 20px;
+  transition: transform 0.3s;
+  width: 35%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s;
+  padding-right: 40px;
+  animation: escalar-continuo 8s ease-in-out infinite;
+}
+.seccion .imagen:hover {
+  transform: scale(1.05);
+}
+.seccion .contenido {
+  max-width: 600px;
+  text-align: center;
+}
+.seccion .contenido .boton {
   display: inline-block;
   padding: 10px 20px;
   background-color: #0074d9;
@@ -261,26 +277,8 @@ header.navbar .pick-icon {
   margin: 0 10px;
   font-family: Helvetica;
 }
-.seccion .boton:hover {
+.seccion .contenido .boton:hover {
   background-color: #0056b3;
-}
-.seccion .imagen {
-  max-width: 100%;
-  margin-right: 20px;
-  transition: transform 0.3s;
-  width: 35%;
-  max-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: transform 0.3s;
-  padding-right: 40px;
-}
-.seccion .imagen:hover {
-  transform: scale(1.05);
-}
-.seccion .contenido {
-  max-width: 600px;
-  text-align: center;
 }
 @media (max-width: 767px) {
   .seccion {
@@ -290,8 +288,8 @@ header.navbar .pick-icon {
   }
   .seccion .imagen {
     width: 100%;
-    max-height: auto;
     padding-right: 0;
+    margin: 0 0 20px 0;
   }
   .seccion .imagen:hover {
     transform: none;
@@ -300,32 +298,51 @@ header.navbar .pick-icon {
     flex-direction: column;
     text-align: center;
   }
-  .seccion .imagen {
-    margin: 0 0 20px 0;
+}
+
+@keyframes escalar-continuo {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
   }
 }
-
 /*                                        discografía                                             */
-iframe {
-  width: 300px;
-  height: 380px;
-  margin-left: 20px;
-}
-
 .reproductor_discos {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 60%;
+  max-width: 800px;
   margin: auto;
   margin-top: 100px;
 }
 .reproductor_discos .reproductor {
-  width: 300px;
-  margin-right: 80px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.reproductor_discos .reproductor iframe {
+  width: 100%;
+  height: 380px;
 }
 .reproductor_discos .informacion {
-  flex: 1;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .reproductor_discos {
+    flex-direction: row;
+  }
+  .reproductor_discos .reproductor {
+    width: 40%;
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
+  .reproductor_discos .informacion {
+    flex: 1;
+    text-align: left;
+  }
 }
 
 /*                                        contacto                                            */
@@ -364,48 +381,48 @@ iframe {
 }
 
 /*                                        merch                                            */
-.merch-grid {
+.merch-container {
+  text-align: center;
+  margin-top: 5%;
+}
+.merch-container .title {
+  font-size: 2em;
+}
+.merch-container .merch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 2%;
   max-width: 100%;
 }
-
-@media (min-width: 768px) {
-  .merch-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.product-card {
+.merch-container .merch-grid .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
   text-align: center;
   transition: transform 0.3s;
   position: relative;
+  cursor: pointer;
 }
-.product-card:hover {
+.merch-container .merch-grid .product-card:hover {
   transform: scale(1.01);
 }
-.product-card h3 {
+.merch-container .merch-grid .product-card h3 {
   margin: 3;
   font-size: 15px;
 }
-.product-card .product-image {
+.merch-container .merch-grid .product-card .product-image {
   width: 100%;
   height: auto;
   transition: transform 0.3s ease;
 }
-.product-card .product-image:hover {
+.merch-container .merch-grid .product-card .product-image:hover {
   transform: scale(1.1);
 }
-.product-card .merch-container {
-  text-align: center;
-  margin-top: 5%;
-}
-.product-card .merch-container .merch-title {
-  font-size: 2em;
+@media (min-width: 768px) {
+  .merch-container .merch-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /*                                        tour                                            */
@@ -452,10 +469,16 @@ iframe {
   margin-bottom: 5px;
 }
 .tour-background .overlay-tour .tour-container .concert-bar .left .buy-tickets, .tour-background .overlay-tour .tour-container .concert-bar .center .buy-tickets, .tour-background .overlay-tour .tour-container .concert-bar .right .buy-tickets {
+  display: inline-block;
+  padding: 10px 20px;
   background-color: #0074d9;
   color: #fff;
-  padding: 10px 20px;
+  text-decoration: none;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-family: Helvetica;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
